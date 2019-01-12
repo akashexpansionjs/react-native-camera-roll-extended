@@ -501,7 +501,7 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
     if (cursor != null && cursor.getCount() > 0) {
       cursor.moveToFirst();
       String uri = cursor.getString(cursor.getColumnIndex(Images.Thumbnails.DATA));
-      return uri;
+      return uri.substring(1);
     } else {
       return null;
     }
