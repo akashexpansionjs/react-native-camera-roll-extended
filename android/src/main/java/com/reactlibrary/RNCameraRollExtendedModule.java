@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
 @ReactModule(name = RNCameraRollExtendedModule.NAME)
 public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
 
-  protected static final String NAME = "RNCameraRollExtendedModule";
+  protected static final String NAME = "CameraRollExtended";
 
   private static final String ERROR_UNABLE_TO_LOAD = "E_UNABLE_TO_LOAD";
   private static final String ERROR_UNABLE_TO_LOAD_PERMISSION = "E_UNABLE_TO_LOAD_PERMISSION";
