@@ -406,7 +406,7 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
     }
     image.putString("uri", photoUri.toString());
     if (thumbnailUri != null) {
-      image.putString("thumbnailUri", thumbnailUri.toString());
+      image.putString("thumbnailUri", thumbnailUri);
     }
     float width = -1;
     float height = -1;
