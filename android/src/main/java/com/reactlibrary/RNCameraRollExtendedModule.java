@@ -402,7 +402,7 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
       photoUri = Uri.withAppendedPath(Video.Media.EXTERNAL_CONTENT_URI, photos.getString(idIndex));
     } else {
       photoUri = Uri.withAppendedPath(Images.Media.EXTERNAL_CONTENT_URI, photos.getString(idIndex));
-      thumbnailUri = Uri.withAppendedPath(Images.Media.EXTERNAL_CONTENT_URI, getThumbnailURI(resolver, photos.getLong(idIndex)));
+      thumbnailUri = getThumbnailURI(resolver, photos.getLong(idIndex));
     }
     image.putString("uri", photoUri.toString());
     if (thumbnailUri != null) {
@@ -501,7 +501,7 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
     if (cursor != null && cursor.getCount() > 0) {
       cursor.moveToFirst();
       String uri = cursor.getString(cursor.getColumnIndex(Images.Thumbnails.DATA));
-      return uri.substring(1);
+      return uri;
     } else {
       return null;
     }
