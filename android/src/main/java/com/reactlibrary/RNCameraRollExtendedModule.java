@@ -495,7 +495,7 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
     Cursor cursor = Images.Thumbnails.queryMiniThumbnail(
       resolver,
       imageID,
-      Images.Thumbnails.MINI_KIND,
+      Images.Thumbnails.MICRO_KIND,
       null
     );
     if (cursor != null && cursor.getCount() > 0) {
