@@ -402,7 +402,7 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
       photoUri = Uri.withAppendedPath(Video.Media.EXTERNAL_CONTENT_URI, photos.getString(idIndex));
     } else {
       photoUri = Uri.withAppendedPath(Images.Media.EXTERNAL_CONTENT_URI, photos.getString(idIndex));
-      thumbnailUri = getThumbnailURI(resolver, photos.getLong(idIndex));
+      thumbnailUri = Uri.parse(getThumbnailURI(resolver, photos.getLong(idIndex)));
     }
     image.putString("uri", photoUri.toString());
     if (thumbnailUri != null) {
