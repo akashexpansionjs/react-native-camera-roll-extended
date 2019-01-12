@@ -1,6 +1,6 @@
 
 import { NativeModules } from 'react-native';
 
-const { RNCameraRollExtended } = NativeModules;
+const { CameraRollExtended } = NativeModules;
 
-export default RNCameraRollExtended;
+export default CameraRollExtended;
