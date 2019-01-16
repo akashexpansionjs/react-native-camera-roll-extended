@@ -398,11 +398,13 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
     WritableMap image = new WritableNativeMap();
     Uri photoUri;
     String thumbnailUri = null;
-    String filePath = photos.getString(photos.getColumnIndex(Images.Media.DATA));
+    String filePath;
     if (assetType != null && assetType.equals("Videos")) {
       photoUri = Uri.withAppendedPath(Video.Media.EXTERNAL_CONTENT_URI, photos.getString(idIndex));
+      filePath = photos.getString(photos.getColumnIndex(Video.Media.DATA));
     } else {
       photoUri = Uri.withAppendedPath(Images.Media.EXTERNAL_CONTENT_URI, photos.getString(idIndex));
+      filePath = photos.getString(photos.getColumnIndex(Images.Media.DATA));
       thumbnailUri = getThumbnailURI(resolver, photos.getLong(idIndex));
     }
     image.putString("uri", photoUri.toString());
