@@ -359,7 +359,7 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
       WritableMap edge = new WritableNativeMap();
       WritableMap node = new WritableNativeMap();
       boolean imageInfoSuccess =
-          putImageInfo(resolver, photos, node, idIndex, widthIndex, heightIndex, assetType, dataIndex);
+          putImageInfo(resolver, photos, node, idIndex, widthIndex, heightIndex, assetType);
       if (imageInfoSuccess) {
         putBasicNodeInfo(photos, node, mimeTypeIndex, groupNameIndex, dateTakenIndex);
         putLocationInfo(photos, node, longitudeIndex, latitudeIndex);
