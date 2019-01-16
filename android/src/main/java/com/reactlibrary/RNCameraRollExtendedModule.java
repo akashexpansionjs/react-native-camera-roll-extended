@@ -354,7 +354,6 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
     int heightIndex = IS_JELLY_BEAN_OR_LATER ? photos.getColumnIndex(Images.Media.HEIGHT) : -1;
     int longitudeIndex = photos.getColumnIndex(Images.Media.LONGITUDE);
     int latitudeIndex = photos.getColumnIndex(Images.Media.LATITUDE);
-    int dataIndex = photos.getColumnIndex(Images.Media.DATA);
 
     for (int i = 0; i < limit && !photos.isAfterLast(); i++) {
       WritableMap edge = new WritableNativeMap();
@@ -395,12 +394,10 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
       int idIndex,
       int widthIndex,
       int heightIndex,
-      @Nullable String assetType,
-      int dataIndex) {
+      @Nullable String assetType) {
     WritableMap image = new WritableNativeMap();
     Uri photoUri;
     String thumbnailUri = null;
-    String filePath = photos.getString(dataIndex);
     if (assetType != null && assetType.equals("Videos")) {
       photoUri = Uri.withAppendedPath(Video.Media.EXTERNAL_CONTENT_URI, photos.getString(idIndex));
     } else {
@@ -408,7 +405,6 @@ public class RNCameraRollExtendedModule extends ReactContextBaseJavaModule {
       thumbnailUri = getThumbnailURI(resolver, photos.getLong(idIndex));
     }
     image.putString("uri", photoUri.toString());
-    image.putString("filePath", filePath);
     if (thumbnailUri != null) {
       image.putString("thumbnailUri", thumbnailUri);
     }
